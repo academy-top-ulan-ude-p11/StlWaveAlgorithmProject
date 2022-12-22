@@ -2,7 +2,15 @@
 
 using namespace std;
 
-enum TableIndex
+enum class Field
+{
+    Start  = 0,
+    Finish = -2,
+    Space  = -1,
+    Wall   = -3
+};
+
+enum class TableIndex
 {
     TopLeft, TopCenter, TopRight,
     MiddleLeft, MiddleCenter, MiddleRight,
@@ -16,11 +24,12 @@ const int BgLight{ 176 };
 const int BgNormal{ 177 };
 const int BgDark{ 178 };
 
+/*
 void BorderDraw(int width, int height, const int* border)
 {
-    cout << (char)border[TopLeft];
+    cout << (char)border[TableIndex::TopLeft];
     for (int i = 0; i < width - 2; i++)
-        cout << (char)border[Horizotal];
+        cout << (char)border[TableIndex::Horizotal];
     cout << (char)border[TopRight] << "\n";
 
     for (int i = 0; i < height - 2; i++)
@@ -36,10 +45,9 @@ void BorderDraw(int width, int height, const int* border)
         cout << (char)border[Horizotal];
     cout << (char)border[BottomRight] << "\n";
 }
-
+*/
 
 int main()
 {
-    BorderDraw(10, 6, BorderDouble);
-    cout << (char)BgLight << " " << (char)BgNormal << " " << (char)BgDark << "\n";
+    
 }
