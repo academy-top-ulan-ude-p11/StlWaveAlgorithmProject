@@ -1,11 +1,13 @@
 ﻿#include "WaveFuncs.h"
-
+#include "Console.h"
 using namespace std;
 
 
 
 int main()
 {
+    Console console("Hello world");
+
     //BorderDraw(20, 10, BorderSingle);
 
     
@@ -58,8 +60,6 @@ int main()
         }
         frontCurr = !frontCurr;
         frontNumber++;
-        MapConsole(map);
-        cout << "\n";
     }
 
     MapConsole(map);
@@ -95,6 +95,11 @@ int main()
         { 
             cout << "[" << item.row << "," << item.col << "] "; 
         });
+
+    cout << "\n";
+    WayConsole(map, way);
+
+
 
     return 0;
 }

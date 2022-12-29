@@ -108,5 +108,36 @@ void MapConsole(Map map)
 
 void WayConsole(Map map, Way way)
 {
+    string symbol;
+    for (int row = 0; row < map.size(); row++)
+    {
+        for (int col = 0; col < map[0].size(); col++)
+        {
+            if ((Field)map[row][col] == Field::Wall)
+                cout << string(2, BgNormal);
+            else
+            {
+                auto findIterator = find(way.begin(), way.end(), Cell{ row, col });
+                if (findIterator != way.end()) 
+                    cout << setw(2) << map[row][col];
+                else
+                {
+                    cout << setw(2) << " ";
+                    map[row][col] = (int)Field::Space;
+                }
+                    
+            }
+                
+        }
+        cout << "\n";
+    }
 
+    /*cout << "\n";
+    for (int row = 0; row < map.size(); row++)
+    {
+        for (int col = 0; col < map[0].size(); col++)
+            cout << setw(3) << map[row][col];
+        cout << "\n";
+    }
+    cout << "\n";*/
 }

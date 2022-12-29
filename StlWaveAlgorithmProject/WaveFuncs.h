@@ -12,6 +12,10 @@ struct Cell
 {
     int row;
     int col;
+    friend bool operator==(const Cell& cell1, const Cell& cell2)
+    {
+        return (cell1.row == cell2.row) && (cell1.col == cell2.col);
+    }
     /*friend ostream& operator<<(ostream& out, Cell& cell)
     {
         out << "[" << cell.row << "," << cell.col << "]";
