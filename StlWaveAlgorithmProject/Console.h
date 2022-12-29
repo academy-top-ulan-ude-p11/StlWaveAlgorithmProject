@@ -11,6 +11,7 @@ public:
 		hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		hIn  = GetStdHandle(STD_INPUT_HANDLE);
 		SetConsoleTitle((LPCTSTR)title.c_str());
+		SetConsoleOutputCP(1251);
 	}
 };
 
